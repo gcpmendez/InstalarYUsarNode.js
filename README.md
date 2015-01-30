@@ -1,7 +1,7 @@
 #**Instalación y uso de Node.JS**
 
 <p align="center">
-<img src="https://github.com/gcpmendez/InstalarYUsarNode.js/blob/master/002.png" title="Node.JS" width="400" height="250">
+<img src="https://github.com/gcpmendez/InstalarYUsarNode.js/blob/master/003.png" title="Node.JS" width="400" height="250">
 </p>
 
 **Node** es un intérprete Javascript del lado del servidor que cambia la noción de cómo debería trabajar un servidor. Su meta es permitir a un programador construir aplicaciones altamente escalables y escribir código que maneje decenas de miles de conexiones simultáneas en una sólo una máquina física.
