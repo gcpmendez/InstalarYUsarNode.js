@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Instalaryusarnode.js by gcpmendez</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Instalaryusarnode.js</h1>
+        <p>Instalación y uso de Node.js</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/gcpmendez/InstalarYUsarNode.js" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/gcpmendez/InstalarYUsarNode.js/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/gcpmendez/InstalarYUsarNode.js/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="instalación-y-uso-de-nodejs" class="anchor" href="#instalaci%C3%B3n-y-uso-de-nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Instalación y uso de Node.JS</strong>
+</h1>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/gcpmendez/InstalarYUsarNode.js/master/003.png" title="Node.JS" width="400" height="250">
+</p>
+
+<p><strong>Node</strong> es un intérprete Javascript del lado del servidor que cambia la noción de cómo debería trabajar un servidor. Su meta es permitir a un programador construir aplicaciones altamente escalables y escribir código que maneje decenas de miles de conexiones simultáneas en una sólo una máquina física.</p>
+
+<p>Tiene un "repositorio" de paquetes o frameworks que puedes utilizar mientras desarrollas. Se encuentran como Node Package Manager(NPM).</p>
+
+<h2>
+<a id="instalación" class="anchor" href="#instalaci%C3%B3n" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Instalación</strong>
+</h2>
+
+<p>Pasamos a la <strong>instalación</strong> en los diferentes entornos:</p>
+
+<ul>
+<li>Linux</li>
+<li>En la Nube (Cloud 9 Ide)</li>
+</ul>
+
+<h3>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Linux</strong>
+</h3>
+
+<p>En Linux la forma de tener NodeJS es bajando el código fuente de la versión que más nos guste, compilarlo e instalarlo.</p>
+
+<p>Para descargarlo se puede hacer de varias opciones, yendo a la página y descargando el node-v0.X.tar.gz, o podemos usar git haciendo un clone del source. Si quieren elejir y tirar un cURL (o descargar) una version en particular pueden verlo en <a href="http://nodejs.org/dist/">Distribuciones de Node.JS</a></p>
+
+<p>Después de tener el tar.gz vamos a hacer los pasos de descomprimir, crear una carpeta, configurar el paquete, compilarlo e instalarlo:</p>
+
+<p>Abrimos el terminal, nos posicionamos en el mismo directorio d el .tar.gz y hacemos lo siguiente:</p>
+
+<pre><code>$ tar -zxf node-v0.6.5.tar.gz
+$ cd node-v0.6.5
+$ ./configure
+$ make
+$ sudo make install
+</code></pre>
+
+<p>Comprobamos en la terminal que ya tenemos Node:</p>
+
+<pre><code>$ node -v
+</code></pre>
+
+<blockquote>
+<p>Esto nos devuelve la versión de <strong>Node</strong> instalada</p>
+</blockquote>
+
+<p>Ahora usemos Node para ejecutar algo de JavaScript:</p>
+
+<pre><code>$ node
+&gt; var prueba = 'Hola Node';
+&gt; console.log(prueba);
+</code></pre>
+
+<blockquote>
+<p>Presionamos Ctrl+C dos veces y volvemos al terminal.</p>
+</blockquote>
+
+<p><strong>Nota:</strong> <em>Desde la version 0.6 de node ya tenemos el NPM incluido.</em></p>
+
+<h3>
+<a id="en-la-nube-cloud-9-ide" class="anchor" href="#en-la-nube-cloud-9-ide" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>En la Nube (Cloud 9 Ide)</strong>
+</h3>
+
+<p>Una forma interesante de usar nodejs es en la nube, no importa sobre que SO estemos, simplemente abrimos un explorador y arrancamos a escribir código.</p>
+
+<p>Cloud9IDE es una buena opción para empezar con NodeJS evitando instalaciones y configuraciones, y hasta es un IDE, por lo que no necesitamos nada, sólo registrarnos en la página.</p>
+
+<p>Trabaja con github para guardar los proyectos que realicemos por lo que es necesario tener una cuenta en gitub también, está todo muy bien explicado en el sitio.</p>
+
+<h2>
+<a id="uso" class="anchor" href="#uso" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Uso</strong>
+</h2>
+
+<p>Ahora veremos un poco lo que es su <strong>uso</strong> con un primer programa: <strong>'Hola Mundo!'</strong></p>
+
+<ul>
+<li>Crearemos el archivo <strong>holamundo.js</strong>
+</li>
+</ul>
+
+<pre><code>01 var http = require('http');
+02 http.createServer(function(peticion, respuesta){
+03    respuesta.writeHead(200, 'text/plain');
+04    respuesta.end('Hola mundo.');
+05 }).listen(3000, '127.0.0.1');
+06 console.log('El servidor esta funcionando correctamente en http://localhost:3000/');
+</code></pre>
+
+<ul>
+<li>Abrimos la consola de comandos y nos situamos en el directorio del archivo</li>
+</ul>
+
+<pre><code>$ cd C:\Program Files\nodejs\holamundo\
+</code></pre>
+
+<ul>
+<li>Compilamos el archivo con el comando <em>node "NombreDeArchivo".js</em>
+</li>
+</ul>
+
+<pre><code>$ node holamundo.js
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/gcpmendez/InstalarYUsarNode.js/master/002.png" alt="Imagen"></p>
+
+<blockquote>
+<p>Si todo ha salido bien la consola te responderá con el mensaje: 'El servidor esta funcionando correctamente en http://localhost:3000/'</p>
+</blockquote>
+
+<ul>
+<li>Finalmente solo nos queda probar que nuestro servidor esta funcionando correctamente, abrimos un navegador y escribimos <a href="http://localhost:3000/">http://localhost:3000/</a>. Si ha salido todo bien nos aparecerá el mensaje <strong>'Hola mundo!'</strong>
+</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/gcpmendez/InstalarYUsarNode.js/master/001.png" alt="Imagen"></p>
+
+<h5>
+<a id="enlaces-externos" class="anchor" href="#enlaces-externos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enlaces externos:</h5>
+
+<ul>
+<li><a href="nodejs.org">http://nodejs.org/</a></li>
+<li><a href="http://es.wikipedia.org/wiki/Nodejs">node.js - wikipedia</a></li>
+<li><a href="http://fernando-gaitan.com.ar/introduccion-a-node-js-parte-1-instalacion-hola-mundo/">Node.JS Fernando Gaitan</a></li>
+</ul>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/gcpmendez">gcpmendez</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
